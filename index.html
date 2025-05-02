@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+    integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+
+  <script>
+    function moveHighlight(index) {
+      const highlight = document.querySelector('.highlight');
+
+      // Move the highlight div to the selected button
+      highlight.style.left = `${index * 50}%`;
+
+      // Add 'active' class to the clicked button
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach((tab, i) => {
+        if (i === index) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+    }
+
+    // JavaScript to toggle the hidden content and arrow rotation
+    document.addEventListener("DOMContentLoaded", () => {
+      const paragraphs = document.querySelectorAll(".paragraph");
+      const title = document.querySelector(".title");
+      const price = document.querySelector(".price");
+      paragraphs.forEach(paragraph => {
+        const hiddenContent = paragraph.nextElementSibling; // Select the hidden content
+        const arrowIcon = paragraph.querySelector(".arrow-icon"); // Select the arrow icon
+
+        paragraph.addEventListener("click", () => {
+          // Toggle the hidden content visibility
+          hiddenContent.style.display =
+            hiddenContent.style.display === "none" ? "flex" : "none";
+
+          arrowIcon.classList.toggle("rotate");
+        });
+      });
+    });
+
+
+    $('.responsive').slick({
+      centerMode: true,
+      centerPadding: '60px',
+      slidesToShow: 3,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  </script>
+
+
+  <div class="body">
+
+    <!-- <div>
+    <h3>Home</h3>
+</div> -->
+
+    <div class="header">
+
+      <div class="nevbar">
+        <div>
+          <img src="images/Frame.png" alt="">
+        </div>
+
+        <div>
+
+          <h5>
+            <span class="color1">Salon </span>
+
+            <span class="color2">360</span>
+          </h5>
+        </div>
+
+
+        <div class="headings">
+          <ul>
+            <a href="#">Price</a>
+            <a href="#">Portfolio</a>
+            <a href="#">About Us</a>
+            <a href="#">Shop</a>
+          </ul>
+
+        </div>
+        <div class="head">
+          <button class=" firstbutton">Contect Us <img style="width: 14px; height: 14px;
+        padding-left: 10px;" src="images/Union.png" alt=""></button>
+
+        </div>
+      </div>
+    </div>  
+
+    <div class="main1">
+      <div class="leftside">
+        <div class="roboto">
+
+          <h1>
+            <span class="color3">Stylish</span>
+            <span class="color4"> Cuts for Every <br> Young Gentleman</span>
+          </h1>
+        </div>
+        <div>
+          <br>
+          <h6 style="color: rgb(165, 161, 161); font-size: 16px;">Stylish Grooming for the Modern Man—<br>Experience
+            <br> Expert Cuts and Personalized Care.</h6>
+        </div>
+        <div>
+          <button class=" sceondbutton">Contect Us <img style="width: 14px; height: 14px; padding-left: 10px;"
+              src="images/Union.png" alt=""></button>
+        </div>
+        <div>
+          <img style="   margin-top: 35px;
+                width: 70%;
+                height: 40px;
+               margin-left: -80px;" src="images/Frame 10.png" alt="">
+        </div>
+      </div>
+      <div class="rightside">
+        <div>
+          <img class="blackman" src="images/Frame 5.png" alt="">
+        </div>
+
+        <div class="pictures">
+
+          <img style="width: 150px;height: 112px; " class="blackicon" src="images/Group 1.png" alt="">
+
+          <div>
+            <img class="blackman2" src="images/Frame 6.png" alt="">
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="main2">
+      <div class="main-container">
+        <div class="content-box">
+          <div class="tabs">
+            <!-- Highlight div -->
+            <div class="highlight"></div>
+            <!-- Buttons -->
+            <button class="tab" onclick="moveHighlight(0)">Hair cut</button>
+            <button class="tab" onclick="moveHighlight(1)">Shave & Brand</button>
+
+          </div>
+        </div>
+      </div>
+      <br><br>
+
+      <p style="text-align: center; color: rgb(155, 151, 151);">At Salon 360, we believe in a full-circle grooming
+        experience. Discover our <br>services crafted to elevate your style.</p>
+      <br><br><br>
+      <div class="setting">
+        <div class="paragraph">
+          <p class="title">The Classic Crew Cut</p>
+          <p class="price">Price $50</p>
+          <div class="arrow-icon"></div>
+        </div>
+        <div class="hidden-content" style="display: none;">
+
+          <div>
+            <p>The Classic Crew Cut</p>
+          </div>
+          <div><img src="images/image.png"></div>
+          <div>Price $50</p>
+          </div>
+
+          <div>
+
+            <p class="description">
+              The Classic Crew Cut is a clean, timeless style with <br> short length on top
+              and tapered sides, offering a sharp,<br> low-maintenance look for any occasion.
+            </p>
+            <button class="book-btn">Book Appointment</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="setting">
+        <div class="paragraph">
+          <p class="title">The Classic Crew Cut</p>
+          <p class="price">Price $50</p>
+          <div class="arrow-icon"></div>
+        </div>
+        <div class="hidden-content" style="display: none;">
+
+          <div>
+            <p>The Classic Crew Cut</p>
+          </div>
+          <div><img src="images/image.png"></div>
+          <div>Price $50</p>
+          </div>
+
+          <div>
+
+            <p class="description">
+              The Classic Crew Cut is a clean, timeless style with <br> short length on top
+              and tapered sides, offering a sharp,<br> low-maintenance look for any occasion.
+            </p>
+            <button class="book-btn">Book Appointment</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="setting">
+        <div class="paragraph">
+          <p class="title">The Classic Crew Cut</p>
+          <p class="price">Price $50</p>
+          <div class="arrow-icon"></div>
+        </div>
+        <div class="hidden-content" style="display: none;">
+
+          <div>
+            <p>The Classic Crew Cut</p>
+          </div>
+          <div><img src="images/image.png"></div>
+          <div>Price $50</p>
+          </div>
+
+          <div>
+
+            <p class="description">
+              The Classic Crew Cut is a clean, timeless style with <br> short length on top
+              and tapered sides, offering a sharp,<br> low-maintenance look for any occasion.
+            </p>
+            <button class="book-btn">Book Appointment</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="main3">
+      <h1 style="color: white; padding-top: 10px; padding-left: 80px;">Popular products</h1>
+      <br><br>
+      <div class="row responsive">
+        <div class="col-lg-4">
+
+
+          <div class="card">
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <h1 style="color: white; padding-top: 10px; padding-left: 80px;">Recently added</h1>
+      <br><br>
+      <div class="row responsive">
+        <div class="col-lg-4">
+
+
+          <div class="card">
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+            <div>
+              <img src="images/Frame 37.png" alt="">
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 style="color: white; padding-top: 10px; padding-left: 80px;">Our Portfolio</h1>
+
+    <br><br>
+
+
+
+    <div class="main4">
+
+
+
+
+      <div class="first">
+        <div class="box1">
+
+          <img src="images/Rectangle 6.png" alt="">
+
+
+          <img src="images/Rectangle 10.png" alt="">
+
+
+          <img src="images/Rectangle 15.png" alt="">
+
+
+        </div>
+      </div>
+
+      <div class="first">
+        <div class="box1">
+          <img src="images/Rectangle 7.png" alt="">
+
+          <img style="height: 514px;" src="images/Rectangle 11.png" alt="">
+        </div>
+
+      </div>
+
+
+
+      <div class="first">
+        <div class="box1">
+
+          <img style="height: 514px;" src="images/Rectangle 8.png" alt="">
+
+          <img src="images/Rectangle 14.png" alt="">
+
+        </div>
+
+      </div>
+
+
+
+      <div class="first">
+        <div class="box1">
+
+          <img src="images/Rectangle 9.png" alt="">
+
+          <img src="images/Rectangle 12.png" alt="">
+
+          <img src="images/Rectangle 13.png" alt="">
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <h1 style="color: white; padding-top: 10px; padding-left: 80px;">Our Team</h1>
+
+    <br><br>
+
+    <div class="main5">
+      <div class="slidsthree">
+        <div>
+          <img src="images/Frame 45.png" alt="">
+        </div>
+        <div>
+          <img src="images/Frame 46.png" alt="">
+        </div>
+        <div>
+          <img src="images/Frame 47.png" alt="">
+        </div>
+        <div>
+          <img src="images/Frame 48.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <h1 style="color: white; padding-top: 10px; padding-left: 80px;">Testimonials </h1>
+    <br><br>
+    <div class="main6">
+
+      <div class="row responsive">
+        <div class="col-lg-4">
+
+
+          <div class="cards">
+            <div>
+              <img src="images/testimonials card.png" alt="">
+            </div>
+            <div>
+              <img src="images/testimonials card.png" alt="">
+            </div>
+            <div>
+              <img src="images/testimonials card.png" alt="">
+            </div>
+            <div>
+              <img src="images/testimonials card.png" alt="">
+            </div>
+            <div>
+              <img src="images/testimonials card.png" alt="">
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="main8">
+      <div class="content">
+        <div>
+          <h1 style="color: white; ">Contect Us</h1>
+          <br>
+
+          <p class="secondp">Have a question or ready to book? <br>We’re here to help. Reach out and we’ll <br> get back
+            to you as soon as possible!</p>
+          <br><br>
+
+          <h4>Monday - Friday : 10am- 7pm</h4>
+          <br>
+          <h4>Saturday : 10am- 6pm</h4>
+          <br>
+          <h4>Sunday : 10am- 6pm</h4>
+          <br><br>
+          <h4>123 Groom Street Styleville, ST 54321</h4>
+          <br>
+          <h4>(555) 123-4567</h4>
+          <br>
+          <p style="color: rgb(184, 168, 168);" href="#">contact@salon360.com</p>
+        </div>
+
+
+      </div>
+      <div class="secondcontent">
+        <div class="icon">
+          <h1 style="color: white; margin-left: 5px; ">Say Hello</h1>
+          <img style="width: 38px; height: 38px;  margin-left: -50px; " src="images/wave.png" alt="">
+        </div>
+
+        <br>
+        <p style="color: rgb(157, 154, 154);
+  font-size: 15px; margin-left: 5px;">Whether it’s for an appointment or a quick chat,<br> we’d love to hear from you!
+        </p>
+        <br><br>
+
+        <div class="form">
+          <div class="box">
+            <input type="text" placeholder="First Name" class="form-input">
+            <input type="text" placeholder="Last Name" class="form-input">
+          </div>
+
+          <input type="text" placeholder="Email" class="form-inputt">
+          <br><br>
+          <input type="text" placeholder="Phone Number" class="form-inputt">
+          <br><br>
+          <input type="text" placeholder="Write Your Message..." class="form-inputt">
+          <br><br><br>
+
+          <button style="color: white; background-color: #3C3AE6; margin-left: 150px; border: none;
+width: 99px; height: 48px;">Submit</button>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"
+      integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+      $('.card').slick({
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        autoplay: false,
+        arrows: false,
+        autoplaySpeed: 2000,
+      });
+
+
+      $('.cards').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: false,
+        arrows: false,
+        autoplaySpeed: 2000,
+      });
+    </script>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
